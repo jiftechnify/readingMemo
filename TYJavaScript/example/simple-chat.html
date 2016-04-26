@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>simple chat</title>
+  <script type="text/javascript">
+  var socket = new WebSocket("ws://127.0.0.1:1337/");
+  window.onload = function() {
+    // サーバからメッセージを受け取った際のイベント
+    socket.onmessage = function (event) {
+      document.forms[0].messages.value = document.forms[0].messages.value + "\r\n" + event.data;
+    }
+  }
+  // サーバにメッセージを送信
+  function sendMessage(){
+    socket.send(JSON.stringify({"text":document.forms[0].messageText.value, "author":document.forms[0].authorName.value}));
+  }
+  </script>
+</head>
+<body>
+<form>
+送信者: <input type="text" name="authorName" value="" placeholder="your name"><br>
+送信メッセージ: <input type="text" name="messageText" value="" placeholder="input message"><br>
+<input type="button" value="メッセージを送信" onclick="sendMessage();">
+<p>
+受信メッセージ:<br>
+<textarea name="messages" rows="10" cols="50"></textarea>
+</p>
+</form>
+</body>
+</html>

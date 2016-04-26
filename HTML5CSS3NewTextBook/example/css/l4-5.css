@@ -1,0 +1,11 @@
+#introduction {
+	border : 1px solid #000;
+	padding: 10px
+}
+h2, p { color: #000 }
+
+.wordpress { background: #eaeaea }
+
+h3 { color: #f00 }
+
+.jimbo strong { color: #f00 }

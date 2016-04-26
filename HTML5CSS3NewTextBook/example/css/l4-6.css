@@ -1,0 +1,17 @@
+a:link    { color: #e9ae4d; }	/* 未訪問 */
+a:visited { color: #7a5fb4; }	/* 訪問済み */
+a:hover	  { color: #7ad87c; }	/* マウスオーバー */
+a:active  { color: #f75dcc; }	/* クリック中 */
+
+input:focus    { background: #ffe1e1; }		 /* input要素がフォーカスされたとき */
+span:lang(en)  { color     : #6080ec; }		 /* lang属性が"en"であるspan要素 */
+tbody tr:first-child { background: #FFFBD2;} /* tbodyの中の一番最初のtr要素 */
+h2:first-of-type { background: #c1d9f7; }	 /* このページの一番最初に出てくるh2要素 */
+
+p#long:first-line { color: #ff0000; }	/* IDがlongであるp要素の最初の行 */
+p#long:first-letter{					/* IDがlongであるp要素の最初の文字 */
+	font-size: 28px;
+	font-weight: bold;
+}
+h2:before { content: "◆"; }	/* h2要素の前後にひし形を追加 */
+h2:after  { content: "◆"; }

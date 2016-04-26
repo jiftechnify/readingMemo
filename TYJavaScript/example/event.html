@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>example</title>
+</head>
+<body>
+<h1>JavaScript</h1>
+<p>名前を入れてボタンをクリックするとダイアログを表示します</p>
+<form name="form">
+  名前:<input type="text" name="name" id="name">
+  <input type="button" name="button" id="button" value="click">
+</form>
+<hr>
+<p>送信/リセットのときに確認ダイアログを表示します</p>
+<form name="form2" 
+      onsubmit="return confirm('送信')" 
+      onreset="return confirm('リセット')">
+  <input type="text" name="test">
+  <input type="submit" value="送信">
+  <input type="reset" value="リセット">
+</form>
+<hr>
+<form name="form3">
+  <select name="aiu" size="3" multiple>
+    <option value="a">あ</option>
+    <option value="b">い</option>
+    <option value="c">う</option>
+  </select>
+</form>
+<ul id="languages">
+  <li>Java</li>
+  <li>JavaScript</li>
+  <li>PHP</li>
+  <li>Perl</li>
+</ul>
+<form name="form4">
+  <input type="text" id="old">→
+  <input type="text" id="new">
+  <input type="button" value="置き換え" onclick="replaceLiText()">
+</form>
+<p id="result"></p>
+<hr>
+<p>下の枠線内でクリックすると座標が表示されます</p>
+<div id="clickable" style="border: 1px solid gray; height: 150px;">
+</div>
+
+<script type="text/javascript">
+  var button = document.getElementById("button");
+  function showName(){
+    var name = document.form.name.value;
+    if(name){
+      alert("Hello, " + name + "!")
+    }
+    else{
+      alert("input your name, please!")
+    }
+  }
+  button.onclick = showName;
+
+  function replaceLiText(){
+    var oldText = document.getElementById("old");
+    var newText = document.getElementById("new");
+    var ul = document.getElementById("languages");
+    var res = document.getElementById("result");
+    for(i = 0; i < ul.children.length; i++){
+      if(ul.children[i].textContent === oldText.value){
+        ul.children[i].textContent = newText.value;
+        res.textContent = "置き換えました";
+        return;
+      }
+    }
+    res.textContent = "置き換え元が見つかりませんでした";
+  }
+
+  var div = document.getElementById("clickable");
+  div.addEventListener("mousedown", function(e){
+    console.log("mousedown: " + e.clientX + ", " + e.clientY);
+  }, false);
+</script>
+</body>
+</html>

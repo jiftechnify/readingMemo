@@ -1,0 +1,12 @@
+span.link {
+  color: blue;
+  border-bottom: 1px solid blue;
+  cursor: pointer;
+}
+
+div.tooltip {
+  display: none;
+  background-color: blue;
+  color: white;
+  padding: 2px;
+}

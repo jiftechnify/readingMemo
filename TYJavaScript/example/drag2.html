@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Drag Example</title>
+</head>
+<body>
+  <!-- ドロップ対象 -->
+  <div id="target" style="border: 1px solid gray; height: 100px"></div>
+
+  <script type="text/javascript">
+  // ドロップ対象にイベントハンドラを登録
+  var target = document.getElementById("target");
+  target.addEventListener("drop", handleDrop, false);
+  target.addEventListener("dragenter", cancelEvent, false);
+  target.addEventListener("dragover", cancelEvent, false);
+
+  // ドロップ時: ドロップされたファイルの情報をコンソールに出力
+  function handleDrop(e){
+    for(var i = 0; i < e.dataTransfer.files.length; i++){
+      // ファイルを取得
+      var file = e.dataTransfer.files[i];
+      console.log("name: " + file.name);
+      console.log("type: " + file.type);
+      console.log("size: " + file.size);
+
+      var fileReader = new FileReader();
+      fileReader.onload = function(e){
+        console.log("contens: " + e.target.result);
+      }
+      fileReader.readAsText(file);
+    }
+    e.preventDefault(); // デフォルトの動作をキャンセル
+  }
+
+  // ドラッグ対象がドロップ対象に重なっているとき、イベントの動作をキャンセルする
+  function cancelEvent(e){
+    e.preventDefault();
+  }
+  </script>
+</body>
+</html>

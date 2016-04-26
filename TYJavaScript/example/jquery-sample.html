@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery example</title>
+    <script src="js/jquery-2.2.0.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/jquery-sample.css">
+</head>
+<body>
+<div id="container">
+<h1>jQuery Example</h1>
+<h2>jQueryの基本</h2>
+<form>
+お名前をどうぞ:<br>
+<input type="text" id="name" placeholder="input your name">
+<input type="button" id="button" value="click">
+</form>
+
+<h2>DOM要素の操作</h2>
+<h3>DOM要素の挿入</h3>
+<input type="button" id="img-show" value="押すと下のli要素の左に画像が出ます">
+<input type="button" id="img-hide" value="画像が消えます">
+<ul id="img-list">
+    <li>1つめ</li>
+    <li>2つめ
+        <ul>
+            <li>入れ子</li>
+        </ul>
+    </li>
+    <li>3つめ</li>
+</ul>
+
+<h3>DOM要素の中身を変更</h3>
+<input type="button" id="change-text" value="押すと翻訳されます">
+<input type="button" id="restore-text" value="押すと戻ります">
+<p id="pen"><strong>I'm a pen.</strong></p>
+
+<h2>CSSの操作</h2>
+<p>文字にカーソルを当てると背景と同化します</p>
+<input type="button" id="change-color" value="押すと色が変わります">
+<input type="button" id="toggle" value="押すと表示/非表示を切り替えます">
+<p id="color">私はカメレオンです</p>
+
+<h2>フォームの操作</h2>
+<input type="checkbox" name="lang" value="Java">Java
+<input type="checkbox" name="lang" value="JavaScript">JavaScript
+<input type="checkbox" name="lang" value="Scala">Scala<br>
+<input type="button" id="disp-lang" value="選択されている言語を表示">
+<input type="button" id="select-js" value="JavaScriptだけを選択">
+<input type="button" id="select-all" value="全選択">
+
+<h2>Ajax</h2>
+
+</div>
+
+<script type="text/javascript">
+// ランダムなRGB値を生成
+function randomRGB(){
+    function rand255(){
+        return Math.floor(Math.random() * 256);
+    }
+    return 'rgb(' + rand255() + ',' + rand255() + ',' + rand255() + ')';
+}
+// HTMLのロード後に実行される処理
+$(function(){
+    // $()関数にCSSセレクタを指定すると要素を検索できる。
+    // "click"などイベントに対応した関数でイベントハンドラを登録できる。
+    $('#button').click(function(){
+        // val()メソッドでテキストフィールドの値を取得  
+        var name = $('#name').val();
+        alert('こんにちは、' + name + 'さん');
+    });
+
+    // #img-showをクリックすると#img-listの中の全li要素の子要素の前にimg要素を追加
+    $('#img-show').click(function(){
+        $('#img-list li').prepend($('<img>').attr('src', 'icon.png'));
+    });
+    // #img-hideをクリックするとimg要素を削除
+    $('#img-hide').click(function(){
+        $('#img-list li img').remove();
+    });
+
+    // #change-textをクリックするとテキストを変更
+    $('#change-text').click(function(){
+        $('#pen').text('私はペンです');
+    });
+    // #restore-textをクリックすると戻る(内容にHTMLタグが含まれる場合はhtml()を使う)
+    $('#restore-text').click(function(){
+        $('#pen').html("<strong>I'm a pen.</strong>");
+    });
+
+    // #change-colorをクリックすると#colorの背景色を変更
+    $('#change-color').click(function(){
+        $('#color').css({
+            'background-color': randomRGB()
+        });
+    });
+    // マウスを当てると背景と同化
+    $('#color').mouseover(function(){
+        $(this).css('color', $(this).css('background-color'));
+    });
+    $('#color').mouseout(function(){
+        $('#color').css('color', 'rgb(0, 0, 0)');
+    });
+    // #toggleをクリックすると表示非表示切り替え
+    $('#toggle').click(function(){
+        $('#color').toggle();
+    });
+
+    // 選択されているチェックボックスの値を取得
+    $('#disp-lang').click(function(){
+        var checked = $('input[name=lang]:checked').map(function (i, e){ return e.value; }).get(); // getしないと本当の配列にはならないっぽい
+        var checkedAsStr = checked.reduce(function (h, t){ return h + t + "\n"; }, '');
+        if(checkedAsStr){
+            alert(checkedAsStr + 'が選択されています');
+        }
+    });
+    // JavaScriptを選択
+    $('#select-js').click(function(){
+        $('input[name=lang]').val(['JavaScript']);
+    });
+    // 全選択
+    $('#select-all').click(function(){
+        $('input[name=lang]').each(function (i, e){ $(e).prop('checked', true); });
+    });
+});
+</script>
+</body>
+</html>

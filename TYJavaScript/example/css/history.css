@@ -1,0 +1,11 @@
+div.item {
+  background-color: #88ffaa;
+  width: 6em;
+  text-align: center;
+}
+
+div {
+  background-color: #ffaa88;
+  padding: 4px;
+  margin: 8px;
+}

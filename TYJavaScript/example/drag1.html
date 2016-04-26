@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Drag Example</title>
+</head>
+<body>
+  <!-- ドロップ対象 -->
+  <div id="target" style="border: 1px solid gray; height: 100px"></div>
+
+  <span id="drag1" name="drag" draggable="true">ドラッグ可能1</span>
+  <span id="drag2" name="drag" draggable="true">ドラッグ可能2</span>
+
+  <script type="text/javascript">
+  // ドラッグ可能要素にイベントハンドラを登録
+  var draggable = document.getElementsByName("drag");
+  for(i = 0; i < draggable.length; i++){
+    draggable[i].addEventListener("dragstart", handleDragStart, false);
+  }
+
+  // ドロップ対象にイベントハンドラを登録
+  var target = document.getElementById("target");
+  target.addEventListener("drop", handleDrop, false);
+  target.addEventListener("dragenter", cancelEvent, false);
+  target.addEventListener("dragover", cancelEvent, false);
+
+  // ドラッグ開始: ドラッグされている要素のid属性をdataTransferに保存
+  function handleDragStart(e){
+    e.dataTransfer.setData("text", e.target.id);
+  }
+
+  // ドロップ時: ドロップされた要素をdiv要素に追加
+  function handleDrop(e){
+    var id = e.dataTransfer.getData("text");
+    var p = document.createElement("p");
+    p.appendChild(document.getElementById(id));
+    e.currentTarget.appendChild(p);
+    e.preventDefault(); // デフォルトの動作をキャンセル
+  }
+
+  // ドラッグ対象がドロップ対象に重なっているとき、イベントの動作をキャンセルする
+  function cancelEvent(e){
+    e.preventDefault();
+  }
+  </script>
+</body>
+</html>

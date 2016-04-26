@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Drag Example</title>
+</head>
+<body>
+  <!-- ドロップ対象 -->
+  <div id="target" style="border: 1px solid gray; height: 100px"></div>
+
+  <p id="progress"></p>
+  <script type="text/javascript">
+  // ドロップ対象にイベントハンドラを登録
+  var target = document.getElementById("target");
+  target.addEventListener("drop", handleDrop, false);
+  target.addEventListener("dragenter", cancelEvent, false);
+  target.addEventListener("dragover", cancelEvent, false);
+
+
+  // ドロップ時: ドロップされた画像をdiv要素に表示
+  function handleDrop(e){
+    for(var i = 0; i < e.dataTransfer.files.length; i++){
+      // ファイルを取得
+      var file = e.dataTransfer.files[i];
+      var fileReader = new FileReader();
+      fileReader.onload = function(e){
+        if(file.type.indexOf("image/") === 0){  // 画像ファイルならその画像からimg要素を生成し、div要素に追加
+          var img= document.createElement("img");
+          img.setAttribute("src", e.target.result);
+          img.setAttribute("style", "width: 100px; height: 100px;");
+          var target = document.getElementById("target");
+          target.appendChild(img);
+        }
+        else {  // 画像ファイルでなければメッセージを表示
+          alert("画像ではありません");
+        }
+      }
+      // エラー時
+      fileReader.onerror = function(e){
+        console.log(e);
+      }
+      // 読込中: 進捗を表示
+      fileReader.onprogress = function(e){
+        var progress = document.getElementById("progress");
+        if(e.lengthComputable){
+          var percent = Math.round((e.loaded / e.total) * 100);
+          progress.innerHTML = percent + "%";
+        }
+        else{
+          progress.innerHTML = "??? %";
+        }
+      }
+      // データを読み込み、URL形式にエンコード
+      fileReader.readAsDataURL(file);
+    }
+    e.preventDefault();
+  }
+
+  // ドラッグ対象がドロップ対象に重なっているとき、イベントの動作をキャンセルする
+  function cancelEvent(e){
+    e.preventDefault();
+  }
+  </script>
+</body>
+</html>

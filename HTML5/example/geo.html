@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>geolocationAPI example</title>
+</head>
+<body>
+  <form>
+    <input type="button" id="geo" value="現在地周辺の地図">
+  </form>
+  <script type="text/javascript">
+    var btn = document.getElementById("geo");
+    btn.onclick = function(){
+      navigator.geolocation.getCurrentPosition(show_location, failed);
+    };
+
+    function show_location(position){
+      var lati  = position.coords.latitude;
+      var longi = position.coords.longitude;
+      window.location.href = "https://www.google.co.jp/maps/@" + lati + "," + longi + ",18z";
+    }
+
+    function failed(){
+      document.writeln("failed");
+    }
+  </script>
+</body>
+</html>

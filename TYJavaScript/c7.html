@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>c7.md—C:\Users\takumi\Documents\reading_memo\TYJavaScript</title>
+    <style type="text/css">
+    html{font-family: sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%}body{margin: 0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display: block}audio,canvas,progress,video{display: inline-block;vertical-align: baseline}audio:not([controls]){display: none;height: 0}[hidden],template{display: none}a{background: transparent}a:active,a:hover{outline: 0}abbr[title]{border-bottom: 1px dotted}b,strong{font-weight: bold}dfn{font-style: italic}h1{font-size: 2em;margin: 0.67em 0}mark{background: #ff0;color: #000}small{font-size: 80%}sub,sup{font-size: 75%;line-height: 0;position: relative;vertical-align: baseline}sup{top: -0.5em}sub{bottom: -0.25em}img{border: 0}svg:not(:root){overflow: hidden}figure{margin: 1em 40px}hr{box-sizing: content-box;height: 0}pre{overflow: auto}code,kbd,pre,samp{font-family: monospace, monospace;font-size: 1em}button,input,optgroup,select,textarea{color: inherit;font: inherit;margin: 0}button{overflow: visible}button,select{text-transform: none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance: button;cursor: pointer}button[disabled],html input[disabled]{cursor: default}button::-moz-focus-inner,input::-moz-focus-inner{border: 0;padding: 0}input{line-height: normal}input[type="checkbox"],input[type="radio"]{box-sizing: border-box;padding: 0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height: auto}input[type="search"]{-webkit-appearance: textfield;box-sizing: content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance: none}fieldset{border: 1px solid #c0c0c0;margin: 0 2px;padding: 0.35em 0.625em 0.75em}legend{border: 0;padding: 0}textarea{overflow: auto}optgroup{font-weight: bold}table{border-collapse: collapse;border-spacing: 0}td,th{padding: 0}*{box-sizing: border-box}input,select,textarea,button{font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"}body{min-width: 1020px;font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color: #333;background-color: #fff}a{color: #4183c4;text-decoration: none}a:hover,a:active{text-decoration: underline}hr,.rule{height: 0;margin: 15px 0;overflow: hidden;background: transparent;border: 0;border-bottom: 1px solid #ddd}hr:before,.rule:before{display: table;content: ""}hr:after,.rule:after{display: table;clear: both;content: ""}h1,h2,h3,h4,h5,h6{margin-top: 15px;margin-bottom: 15px;line-height: 1.1}h1{font-size: 30px}h2{font-size: 21px}h3{font-size: 16px}h4{font-size: 14px}h5{font-size: 12px}h6{font-size: 11px}small{font-size: 90%}blockquote{margin: 0}.lead{margin-bottom: 30px;font-size: 20px;font-weight: 300;color: #555}.text-muted{color: #999}.text-danger{color: #bd2c00}.text-emphasized{font-weight: bold;color: #333}ul,ol{padding: 0;margin-top: 0;margin-bottom: 0}ol ol,ul ol{list-style-type: lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type: lower-alpha}dd{margin-left: 0}tt,code{font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size: 12px}pre{margin-top: 0;margin-bottom: 0;font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace}#realtime .status{overflow: visible;position: absolute;top: -5px;left: 0;background: url("/public/images/github-status.png");width: 26px;height: 26px;display: block;margin: 0 5px 0 0}#realtime .up{background-position: 0 0}#realtime .problem{background-position: 0 -53px}#realtime .down{background-position: 0 -26px}.container{max-width: 920px;margin: 0 auto 20px auto}#header{background: #FAFAFA;background: -moz-linear-gradient(#FAFAFA, #EAEAEA);background: -webkit-linear-gradient(#FAFAFA, #EAEAEA);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eaeaea')";border-bottom: 1px solid #CACACA;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),0 0 10px rgba(0, 0, 0, 0.1)}#markup{padding: 3px}#markup article{padding-top: 30px}.markdown-body{overflow: hidden;font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;font-size: 16px;line-height: 1.6;word-wrap: break-word}.markdown-body>*:first-child{margin-top: 0 !important}.markdown-body>*:last-child{margin-bottom: 0 !important}.markdown-body .absent{color: #c00}.markdown-body .anchor{position: absolute;top: 0;left: 0;display: block;padding-right: 6px;padding-left: 30px;margin-left: -30px}.markdown-body .anchor:focus{outline: none}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{position: relative;margin-top: 1em;margin-bottom: 16px;font-weight: bold;line-height: 1.4}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{display: none;color: #000;vertical-align: middle}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{padding-left: 8px;margin-left: -30px;text-decoration: none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{display: inline-block}.markdown-body h1 tt,.markdown-body h1 code,.markdown-body h2 tt,.markdown-body h2 code,.markdown-body h3 tt,.markdown-body h3 code,.markdown-body h4 tt,.markdown-body h4 code,.markdown-body h5 tt,.markdown-body h5 code,.markdown-body h6 tt,.markdown-body h6 code{font-size: inherit}.markdown-body h1{padding-bottom: 0.3em;font-size: 2.25em;line-height: 1.2;border-bottom: 1px solid #eee}.markdown-body h1 .anchor{line-height: 1}.markdown-body h2{padding-bottom: 0.3em;font-size: 1.75em;line-height: 1.225;border-bottom: 1px solid #eee}.markdown-body h2 .anchor{line-height: 1}.markdown-body h3{font-size: 1.5em;line-height: 1.43}.markdown-body h3 .anchor{line-height: 1.2}.markdown-body h4{font-size: 1.25em}.markdown-body h4 .anchor{line-height: 1.2}.markdown-body h5{font-size: 1em}.markdown-body h5 .anchor{line-height: 1.1}.markdown-body h6{font-size: 1em;color: #777}.markdown-body h6 .anchor{line-height: 1.1}.markdown-body p,.markdown-body blockquote,.markdown-body ul,.markdown-body ol,.markdown-body dl,.markdown-body table,.markdown-body pre{margin-top: 0;margin-bottom: 16px}.markdown-body hr{height: 4px;padding: 0;margin: 16px 0;background-color: #e7e7e7;border: 0 none}.markdown-body ul,.markdown-body ol{padding-left: 2em}.markdown-body ul.no-list,.markdown-body ol.no-list{padding: 0;list-style-type: none}.markdown-body ul ul,.markdown-body ul ol,.markdown-body ol ol,.markdown-body ol ul{margin-top: 0;margin-bottom: 0}.markdown-body li>p{margin-top: 16px}.markdown-body dl{padding: 0}.markdown-body dl dt{padding: 0;margin-top: 16px;font-size: 1em;font-style: italic;font-weight: bold}.markdown-body dl dd{padding: 0 16px;margin-bottom: 16px}.markdown-body blockquote{padding: 0 15px;color: #777;border-left: 4px solid #ddd}.markdown-body blockquote>:first-child{margin-top: 0}.markdown-body blockquote>:last-child{margin-bottom: 0}.markdown-body table{display: block;width: 100%;overflow: auto;word-break: normal;word-break: keep-all}.markdown-body table th{font-weight: bold}.markdown-body table th,.markdown-body table td{padding: 6px 13px;border: 1px solid #ddd}.markdown-body table tr{background-color: #fff;border-top: 1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color: #f8f8f8}.markdown-body img{max-width: 100%;box-sizing: border-box}.markdown-body span.frame{display: block;overflow: hidden}.markdown-body span.frame>span{display: block;float: left;width: auto;padding: 7px;margin: 13px 0 0;overflow: hidden;border: 1px solid #ddd}.markdown-body span.frame span img{display: block;float: left}.markdown-body span.frame span span{display: block;padding: 5px 0 0;clear: both;color: #333}.markdown-body span.align-center{display: block;overflow: hidden;clear: both}.markdown-body span.align-center>span{display: block;margin: 13px auto 0;overflow: hidden;text-align: center}.markdown-body span.align-center span img{margin: 0 auto;text-align: center}.markdown-body span.align-right{display: block;overflow: hidden;clear: both}.markdown-body span.align-right>span{display: block;margin: 13px 0 0;overflow: hidden;text-align: right}.markdown-body span.align-right span img{margin: 0;text-align: right}.markdown-body span.float-left{display: block;float: left;margin-right: 13px;overflow: hidden}.markdown-body span.float-left span{margin: 13px 0 0}.markdown-body span.float-right{display: block;float: right;margin-left: 13px;overflow: hidden}.markdown-body span.float-right>span{display: block;margin: 13px auto 0;overflow: hidden;text-align: right}.markdown-body code,.markdown-body tt{padding: 0;padding-top: 0.2em;padding-bottom: 0.2em;margin: 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px}.markdown-body code:before,.markdown-body code:after,.markdown-body tt:before,.markdown-body tt:after{letter-spacing: -0.2em;content: "\00a0"}.markdown-body code br,.markdown-body tt br{display: none}.markdown-body del code{text-decoration: inherit}.markdown-body pre>code{padding: 0;margin: 0;font-size: 100%;word-break: normal;white-space: pre;background: transparent;border: 0}.markdown-body .highlight{margin-bottom: 16px}.markdown-body .highlight pre,.markdown-body pre{padding: 16px;overflow: auto;font-size: 85%;line-height: 1.45;background-color: #f7f7f7;border-radius: 3px}.markdown-body .highlight pre{margin-bottom: 0;word-break: normal}.markdown-body pre{word-wrap: normal}.markdown-body pre code,.markdown-body pre tt{display: inline;max-width: initial;padding: 0;margin: 0;overflow: initial;line-height: inherit;word-wrap: normal;background-color: transparent;border: 0}.markdown-body pre code:before,.markdown-body pre code:after,.markdown-body pre tt:before,.markdown-body pre tt:after{content: normal}.markdown-body kbd{display: inline-block;padding: 3px 5px;font-size: 11px;line-height: 10px;color: #555;vertical-align: middle;background-color: #fcfcfc;border: solid 1px #ccc;border-bottom-color: #bbb;border-radius: 3px;box-shadow: inset 0 -1px 0 #bbb}.codehilite{background: #ffffff}.codehilite .c{color: #999988;font-style: italic}.codehilite .err{color: #a61717;background-color: #e3d2d2}.codehilite .k{color: #000000;font-weight: bold}.codehilite .o{color: #000000;font-weight: bold}.codehilite .cm{color: #999988;font-style: italic}.codehilite .cp{color: #999999;font-weight: bold}.codehilite .c1{color: #999988;font-style: italic}.codehilite .cs{color: #999999;font-weight: bold;font-style: italic}.codehilite .gd{color: #000000;background-color: #ffdddd}.codehilite .gd .x{color: #000000;background-color: #ffaaaa}.codehilite .ge{color: #000000;font-style: italic}.codehilite .gr{color: #aa0000}.codehilite .gh{color: #999999}.codehilite .gi{color: #000000;background-color: #ddffdd}.codehilite .gi .x{color: #000000;background-color: #aaffaa}.codehilite .go{color: #888888}.codehilite .gp{color: #555555}.codehilite .gs{font-weight: bold}.codehilite .gu{color: #aaaaaa}.codehilite .gt{color: #aa0000}.codehilite .kc{color: #000000;font-weight: bold}.codehilite .kd{color: #000000;font-weight: bold}.codehilite .kp{color: #000000;font-weight: bold}.codehilite .kr{color: #000000;font-weight: bold}.codehilite .kt{color: #445588;font-weight: bold}.codehilite .m{color: #009999}.codehilite .s{color: #d14}.codehilite .na{color: #008080}.codehilite .nb{color: #0086B3}.codehilite .nc{color: #445588;font-weight: bold}.codehilite .no{color: #008080}.codehilite .ni{color: #800080}.codehilite .ne{color: #990000;font-weight: bold}.codehilite .nf{color: #990000;font-weight: bold}.codehilite .nn{color: #555555}.codehilite .nt{color: #000080}.codehilite .nv{color: #008080}.codehilite .ow{color: #000000;font-weight: bold}.codehilite .w{color: #bbbbbb}.codehilite .mf{color: #009999}.codehilite .mh{color: #009999}.codehilite .mi{color: #009999}.codehilite .mo{color: #009999}.codehilite .sb{color: #d14}.codehilite .sc{color: #d14}.codehilite .sd{color: #d14}.codehilite .s2{color: #d14}.codehilite .se{color: #d14}.codehilite .sh{color: #d14}.codehilite .si{color: #d14}.codehilite .sx{color: #d14}.codehilite .sr{color: #009926}.codehilite .s1{color: #d14}.codehilite .ss{color: #990073}.codehilite .bp{color: #999999}.codehilite .vc{color: #008080}.codehilite .vg{color: #008080}.codehilite .vi{color: #008080}.codehilite .il{color: #009999}
+    </style>
+    <style type="text/css">
+      .markdown-body hr{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC")}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="markup">
+        <article id="content" class="markdown-body">
+          <h1 id="javasctipt-7">独習JavaSctipt 7章</h1>
+<p>重要な事だけかいつまんで箇条書き<br>
+<a href="example/event.html">イベント駆動型プログラミングを用いたWebページの例</a><br>
+<a href="index.html">全体目次へ戻る</a></p>
+<h2 id="_1">目次</h2>
+<div class="toc">
+<ul>
+<li><a href="#javasctipt-7">独習JavaSctipt 7章</a><ul>
+<li><a href="#_1">目次</a></li>
+<li><a href="#7-web">7章 Webブラウザのオブジェクト</a><ul>
+<li><a href="#71-javascript">7.1 クライアントサイドJavaScript</a></li>
+<li><a href="#72">7.2 イベント駆動型プログラミング</a><ul>
+<li><a href="#onload">onload</a></li>
+<li><a href="#onsubmitonreset">onsubmit,onreset</a></li>
+<li><a href="#onclickondblclick">onclick,ondblclick</a></li>
+<li><a href="#onchange">onchange</a></li>
+<li><a href="#onmouseoveronmouseout">onmouseover,onmouseout</a></li>
+<li><a href="#onkeydownonkeypressonkeyup">onkeydown,onkeypress,onkeyup</a></li>
+</ul>
+</li>
+<li><a href="#73-window">7.3 Windowオブジェクト</a></li>
+<li><a href="#74">7.4 フレーム</a></li>
+<li><a href="#75-navigator">7.5 Navigatorオブジェクト</a></li>
+<li><a href="#76-location">7.6 Locationオブジェクト</a></li>
+<li><a href="#77-history">7.7 Historyオブジェクト</a></li>
+<li><a href="#78-screen">7.8 Screenオブジェクト</a></li>
+<li><a href="#79">7.9 フォーム</a></li>
+<li><a href="#710-cookie">7.10 Cookie</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="7-web">7章 Webブラウザのオブジェクト</h2>
+<h3 id="71-javascript">7.1 クライアントサイドJavaScript</h3>
+<p>JavaScriptは、ブラウザが用意したオブジェクトを用いてブラウザやWebページを動的に操作することができる。Webアプリケーションはクライアントサイドのプログラムとサーバサイドのプログラムで成り立つが、JavaScriptはクライアントサイドの処理のために用いられる。</p>
+<h3 id="72">7.2 イベント駆動型プログラミング</h3>
+<p>「ボタンがクリックされた」などの「イベント」が発生したときに指定された関数を呼び出して処理を行う、というようなプログラミングモデルを「イベント駆動型」という。</p>
+<p>JavaScriptでイベントを処理する方法は2つある。</p>
+<ul>
+<li>HTMLタグにイベントハンドラの属性を記述</li>
+</ul>
+<div class="codehilite"><pre><span class="c">&lt;!-- ボタンがクリックされたらダイアログを表示 --&gt;</span>
+<span class="c">&lt;!-- showDialog()関数は他の場所で定義しておく --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;click&quot;</span> <span class="na">onclick=</span><span class="s">&quot;showDialog()&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+
+
+<ul>
+<li>JavaScriptでHTML内の要素をオブジェクトとして取得し、それに対しイベントリスナを設定する</li>
+</ul>
+<div class="codehilite"><pre><span class="kd">function</span> <span class="nx">showDialog</span><span class="p">(){</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span> <span class="c1">// ID属性がbuttonである要素のオブジェクトを得る</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">showDialog</span><span class="p">;</span>  <span class="c1">// それに対しクリックイベントのリスナを登録</span>
+</pre></div>
+
+
+<p>イベントハンドラの属性名は<strong>全て小文字</strong>であることに注意。</p>
+<p>イベントハンドラ属性一覧</p>
+<table>
+<thead>
+<tr>
+<th>名前</th>
+<th>イベントが発生するとき</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onclick</code></td>
+<td>クリックされたとき</td>
+</tr>
+<tr>
+<td><code>ondblclick</code></td>
+<td>ダブルクリックされたとき</td>
+</tr>
+<tr>
+<td><code>onmouseover</code></td>
+<td>マウスが要素内に入ったとき</td>
+</tr>
+<tr>
+<td><code>onmouseut</code></td>
+<td>マウスが要素外に出たとき</td>
+</tr>
+<tr>
+<td><code>onmousemove</code></td>
+<td>マウスが要素内で動いたとき</td>
+</tr>
+<tr>
+<td><code>onchange</code></td>
+<td>フォーム内の要素の状態が変わったとき</td>
+</tr>
+<tr>
+<td><code>onblur</code></td>
+<td>フォーム内の要素のフォーカスが外れたとき</td>
+</tr>
+<tr>
+<td><code>onfocus</code></td>
+<td>フォーム内の要素にフォーカスがあたったとき</td>
+</tr>
+<tr>
+<td><code>onkeydown</code></td>
+<td>キーを押したとき</td>
+</tr>
+<tr>
+<td><code>onkeypress</code></td>
+<td>キーを押して放したとき</td>
+</tr>
+<tr>
+<td><code>onkeyup</code></td>
+<td>キーを放したとき</td>
+</tr>
+<tr>
+<td><code>onselect</code></td>
+<td>テキストフィールドで文字が選択されたとき</td>
+</tr>
+<tr>
+<td><code>onsubmit</code></td>
+<td>フォームが送信される前</td>
+</tr>
+<tr>
+<td><code>onreset</code></td>
+<td>フォームがリセットされる前</td>
+</tr>
+<tr>
+<td><code>onload</code></td>
+<td>Webページのロードが終わったとき</td>
+</tr>
+</tbody>
+</table>
+<p>JavaScriptでイベントリスナを登録する場合は、登録対象の<strong>HTML要素より後に</strong>登録するスプリクトを記述する必要がある。外部ファイルに登録処理をまとめる場合など、そのファイルがページのロードが終わってから読み込まれるようにすればよく、そのためには<code>window.onload = 登録処理</code>とする。</p>
+<h4 id="onload"><code>onload</code></h4>
+<p>HTMLに<code>onload</code>のイベントリスナを記述する場合は<code>&lt;body&gt;</code>要素に記述し、JavaScriptでイベントハンドラを登録する場合は<code>window.onload</code>に登録する。</p>
+<h4 id="onsubmitonreset"><code>onsubmit</code>,<code>onreset</code></h4>
+<p>これらはフォームが送信/リセットされる直前に発生する。もしイベントハンドラから<code>false</code>が返った場合は、送信/リセットを中断する。よって、イベントハンドラには送信/リセット操作を本当に行うかを確認する処理(<code>confirm()</code>によって確認ダイアログを表示するなど)を設定することになる。<code>confirm()</code>で表示されるダイアログには「OK」と「キャンセル」の2つのボタンがあり、「OK」が押されると<code>true</code>、「キャンセル」が押されると<code>false</code>が返るようになっている。</p>
+<p><code>&lt;form&gt;</code>要素の<code>name</code>属性に"confirm"という名前をつけるとうまく動かない(謎)</p>
+<div class="codehilite"><pre><span class="nt">&lt;form</span> <span class="na">onsubmit=</span><span class="s">&quot;return confirm(&#39;送信しますか?&#39;)&quot;</span> <span class="na">onreset=</span><span class="s">&quot;リセットしますか?&quot;</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;送信&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;reset&quot;</span>  <span class="na">value=</span><span class="s">&quot;リセット&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+
+
+<form onsubmit="return confirm('送信しますか?')" onreset="return confirm('リセットしますか?')">
+  <input type="text" name="name">
+  <input type="submit" value="送信">
+  <input type="reset"  value="リセット">
+</form>
+
+<h4 id="onclickondblclick"><code>onclick</code>,<code>ondblclick</code></h4>
+<p>要素がクリック(ダブルクリック)されたときに発生する。マウスでの操作だけではなく、フォーカスを当てた状態でEnterを押したなど、キーボード操作でも発生する。イベントハンドラから<code>false</code>を返せばクリック操作をキャンセルできる。</p>
+<h4 id="onchange"><code>onchange</code></h4>
+<p>フォームの入力項目の内容が変わったときに発生する。ただし、テキストフィールドの場合はフォーカスが外れた時点で発生する。</p>
+<div class="codehilite"><pre><span class="c">&lt;!-- 選択した文字を下に表示する --&gt;</span>
+<span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;select&quot;</span> <span class="na">id=</span><span class="s">&quot;aiu&quot;</span> <span class="na">onchange=</span><span class="s">&quot;showText(this.value)&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;あ&quot;</span><span class="nt">&gt;</span>あ<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;い&quot;</span><span class="nt">&gt;</span>い<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;う&quot;</span><span class="nt">&gt;</span>う<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;textlbl&quot;</span><span class="nt">&gt;</span>あ<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+  <span class="kd">function</span> <span class="nx">showText</span><span class="p">(</span><span class="nx">v</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;textlbl&#39;</span><span class="p">);</span>
+    <span class="nx">l</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+
+<form>
+<select name="select" id="aiu" onchange="showText(this.value)">
+  <option value="あ">あ</option>
+  <option value="い">い</option>
+  <option value="う">う</option>
+</select>
+</form>
+
+<div id="textlbl">文字を選択するとここに表示されます</div>
+
+<h4 id="onmouseoveronmouseout"><code>onmouseover</code>,<code>onmouseout</code></h4>
+<p>例</p>
+<div class="codehilite"><pre><span class="nt">&lt;span</span> <span class="na">onmouseover=</span><span class="s">&quot;this.style.backgroundColor = &#39;yellow&#39;&quot;</span>
+      <span class="na">onmouseout=</span><span class="s">&quot;this.style.backgroundColor = &#39;white&#39;&quot;</span><span class="nt">&gt;</span>
+  文字にマウスを当てると背景色が変わる  
+<span class="nt">&lt;/span&gt;</span>
+</pre></div>
+
+
+<p><span onmouseover="this.style.backgroundColor = 'yellow'"
+      onmouseout="this.style.backgroundColor = 'white'">
+  文字にマウスを当てると背景色が変わる 
+</span></p>
+<h4 id="onkeydownonkeypressonkeyup"><code>onkeydown</code>,<code>onkeypress</code>,<code>onkeyup</code></h4>
+<p>キーを押し続けると<code>onkeypress</code>が連続で発生する。テキストフィールドの入力チェックに使える。</p>
+<h3 id="73-window">7.3 Windowオブジェクト</h3>
+<p>Webブラウザ環境におけるJavaScriptのグローバルオブジェクト。よって、Windowオブジェクトのプロパティやメソッドはその名前を書くだけで使える。よく使いそうなのについてメモ</p>
+<ul>
+<li>入力ダイアログ</li>
+</ul>
+<p><code>prompt(msg, defalut)</code>メソッドで入力可能なダイアログを表示する。<code>default</code>は入力フィールドの初期値。OKが押された場合は入力文字列が、キャンセルが押された場合は<code>null</code>が返る。</p>
+<form>
+  <input type="button" name="btn" value="入力" onclick="prompt('入力できます','初期値')">
+</form>
+
+<hr>
+<ul>
+<li>スクロール</li>
+</ul>
+<p>移動先を絶対座標で指定する<code>scrollTo</code>と、現在位置からの相対的な移動量を指定する<code>scrollBy</code>の2つのメソッドがある。</p>
+<div class="codehilite"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;ページの先頭へ&quot;</span> <span class="na">onclick=</span><span class="s">&quot;scrollTo(0, 0)&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;少し下へ&quot;</span> <span class="na">onclick=</span><span class="s">&quot;scrollBy(0, 50)&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+
+
+<form>
+  <input type="button" name="sclTo" value="ページの先頭へ" onclick="scrollTo(0, 0)">
+  <input type="button" name="sclBy" value="少し下へ" onclick="scrollBy(0, 50)">
+</form>
+
+<hr>
+<ul>
+<li>タイマー<ul>
+<li><code>setTimeout(func, delay)</code>は指定時間(<code>delay</code>)後に処理<code>func</code>を実行する。</li>
+<li><code>setInterval(func, interval)</code>は指定時間(<code>interval</code>)ごとに繰り返し処理を実行する。</li>
+<li><code>clear[Timeout/Interval](timerID)</code>で設定したタイマーを停止させる。<code>timerID</code>は<code>setなんとか</code>の返り値として得られるタイマーのID。</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;ページの先頭まで少しずつスクロール&quot;</span> <span class="na">onclick=</span><span class="s">&quot;slowScroll()&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+  <span class="kd">var</span> <span class="nx">timer</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">slowScroll</span><span class="p">(){</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">scrollBy</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">pageYOffset</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">){</span>  
+        <span class="nx">stopScroll</span><span class="p">();</span> 
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">30</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="kd">function</span> <span class="nx">stopScroll</span><span class="p">(){</span>
+    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+
+<form>
+  <input type="button" value="ページの先頭まで少しずつスクロール" onclick="slowScroll()">
+</form>
+
+<h3 id="74">7.4 フレーム</h3>
+<p>いまどきフレームなんて...</p>
+<h3 id="75-navigator">7.5 Navigatorオブジェクト</h3>
+<p>ブラウザの情報を取得したりGeolocation APIで位置情報を利用するために使う。</p>
+<h3 id="76-location">7.6 Locationオブジェクト</h3>
+<p>現在表示しているページのURLに関する情報。URLの全体は<code>location.href</code>プロパティにあり、その他にもURLの部分部分に対応する多くのプロパティがある。<code>location.href</code>にURLを代入すると、ページ遷移ができる(遷移履歴が残る)。また、<code>location.replace()</code>メソッドを使えば履歴を残さずにページ遷移することができる。</p>
+<h3 id="77-history">7.7 Historyオブジェクト</h3>
+<p>ブラウザの履歴に関する操作を行う。<code>history.[back/forward]()</code>で戻る/進む操作ができる。また<code>history.go(n)</code>で履歴をn個分進める(nが負なら戻る)。<code>history.pushState(state, title, url)</code>はAjaxで画面遷移の際にある状態の画面を保存しておくために使う。</p>
+<h3 id="78-screen">7.8 Screenオブジェクト</h3>
+<p>「画面」の情報にアクセスするためのオブジェクト。</p>
+<h3 id="79">7.9 フォーム</h3>
+<p><code>document.formName.inputName</code></p>
+<p>のようにフォームの名前を用いて簡単な記述でアクセスすることができる。ただしフォームに<code>name</code>属性で名前をつける必要がある。同じ名前のフォーム(入力項目)が複数ある場合は、配列としてアクセスできる。同じグループ内のラジオボタンには同じ名前をつける必要がある。</p>
+<hr>
+<p>ラジオボタン、チェックボックス、セレクトボックスの値の取得方法について</p>
+<ul>
+<li>ラジオボタン</li>
+</ul>
+<p>複数の項目からなるグループ内で1つだけ選択できるもの。同じグループのラジオボタン要素には全て同じ<code>name</code>属性の値を持たせる。</p>
+<p><code>document.formName.radioButtonGloupName</code></p>
+<p>のようにして、同じグループのラジオボタンを配列として参照できる。</p>
+<ul>
+<li>チェックボックス</li>
+</ul>
+<p>こちらは同一グループ内の項目から複数選択できる。同じグループのチェックボックスに全て同じ<code>name</code>属性を指定することで、複数の項目をグループとして見ることができる。</p>
+<ul>
+<li>セレクトボックス</li>
+</ul>
+<p><code>&lt;select&gt;</code>要素で表されるプルダウンリストおよびリストボックス。リストボックスにする場合は<code>size</code>属性を指定する。<code>multiple</code>属性を指定すると、複数選択可能なリストボックスになる。</p>
+<p>セレクトボックスの選択項目には<code>(selectName).options</code>プロパティで配列としてアクセスできる。また、このプロパティに<code>Option</code>オブジェクトを追加することで、JavaScriptから新しい選択項目を追加することもできる。<code>options</code>の要素に<code>null</code>を代入すれば、それに対応する選択項目を削除することができる。</p>
+<hr>
+<p>入力項目の<code>disable</code>プロパティを<code>true</code>にすると入力項目を無効にでき、<code>readOnly</code>を<code>true</code>にすると読み取り専用(編集不可・文字のコピーは可)になる。</p>
+<h3 id="710-cookie">7.10 Cookie</h3>
+<p>新しいローカルストレージを使えばいいと思うよ</p>
+<hr>
+<p><a href="c56.html">前へ</a> / <a href="index.html">全体目次へ戻る</a> / <a href="c8.html">次へ</a></p>
+<script type="text/javascript">
+  function showText(v){
+    var l = document.getElementById('textlbl');
+    l.textContent = v;
+  }
+
+  var timer;
+  function slowScroll(){
+    timer = setInterval(function(){
+      scrollBy(0, -100);
+      if (pageYOffset <= 0){ 
+        stopScroll(); 
+      }
+    }, 30);
+  }
+  function stopScroll(){
+    clearInterval(timer);
+  }
+</script>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

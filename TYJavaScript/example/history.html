@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>history example</title>
+  <link rel="stylesheet" href="css/history.css">
+  <script type="text/javascript">
+  // 履歴を移動した際のイベント
+  window.onpopstate = function(event){
+    if(event.state == undefined){ // 初回
+      showDetail(0);
+    }
+    else {  // 履歴に保存されている番号の詳細を表示
+      showDetail(event.state.detailNo);
+    }
+  }
+  // 状態を履歴に追加し、詳細の表示を書き換える
+  function pushStateAndShowDetail(_detailNo){
+    history.pushState({"detailNo": _detailNo}, "", "#" + _detailNo);
+    showDetail(_detailNo);
+  }
+  // ブックマークから直接呼び出された場合もハッシュの値で詳細を表示する
+  window.onload = function(){
+    if(location.hash.length > 1){
+      showDetail(parseInt(location.hash.substring(1)));
+    }
+  }
+  // 詳細の表示を書き換える
+  function showDetail(_detailNo){
+    var detail = document.getElementById("detail");
+    switch(_detailNo){
+      case 0:
+        detail.innerText = "詳細がここに表示されます";
+        break;
+      case 1:
+        detail.innerText = "アイテム1の詳細です";
+        break;
+      case 2:
+        detail.innerText = "アイテム2の詳細です";
+        break;
+      default:
+        detail.innerText = "そんなアイテムはない";
+        break;
+    }
+  }
+  </script>
+</head>
+<body>
+<h1>history example</h1>
+<p>タイトルをクリックすると詳細が表示されます</p>
+<div class="item" id="item1" onclick="pushStateAndShowDetail(1);">タイトル1</div>
+<div class="item" id="item2" onclick="pushStateAndShowDetail(2);">タイトル2</div>
+<hr>
+<div id="detail">
+  詳細がここに表示されます
+</div>
+</body>
+</html>
