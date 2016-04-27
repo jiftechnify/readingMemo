@@ -1,17 +1,17 @@
 # 入門HTML5 メモ
-[戻る](../index.html)
+[戻る](../index.md)
 
 ## 目次
-+ [2章 HTML5の機能を検出する](c2.html)
-+ [3章 HTML文書の構造と意味付け](c3.html)
-+ [4章 Canvasによる描画](c4.html)
-+ [5章 Webのビデオ](c5.html)
-+ [6章 Geolocation APIによる位置情報通知](c6.html)
-+ [7章 Webアプリケーションのローカルストレージ](c7.html)
-+ [8章 オフライン状態での動作](c8.html)
-+ [9章 Webフォーム](c9.html)
-+ [10章 マイクロデータによるマークアップの拡張](c10.html)
-+ [11章 HTML5 history API](c11.html)
++ [2章 HTML5の機能を検出する](c2.md)
++ [3章 HTML文書の構造と意味付け](c3.md)
++ [4章 Canvasによる描画](c4.md)
++ [5章 Webのビデオ](c5.md)
++ [6章 Geolocation APIによる位置情報通知](c6.md)
++ [7章 Webアプリケーションのローカルストレージ](c7.md)
++ [8章 オフライン状態での動作](c8.md)
++ [9章 Webフォーム](c9.md)
++ [10章 マイクロデータによるマークアップの拡張](c10.md)
++ [11章 HTML5 history API](c11.md)
 
 ## 情報
 Mark Pilgrim 著/矢倉　眞隆 監訳/水原　文 訳
