@@ -1,5 +1,5 @@
 # 独習JavaSctipt 第2版 メモ
-[戻る](../index.md)
+[戻る](../../../tree/master)
 
 ## 目次
 + [1章～3章 基本](c123.md)

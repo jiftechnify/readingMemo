@@ -1,5 +1,5 @@
 # WordPress デザインブック メモ
-[戻る](../index.html)
+[戻る](../../../tree/master)
 
 ## 目次
 + [1〜2章 ](c1-2.html)

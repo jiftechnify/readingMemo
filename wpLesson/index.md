@@ -1,5 +1,5 @@
 # WordPressレッスンブック メモ
-[戻る](../index.html)
+[戻る](../../../tree/master)
 
 ## 目次
 + [2章 ](c2.html)
