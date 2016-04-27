@@ -6,3 +6,7 @@
 + [WordPressデザインブック](wpDesign/index.md)
 + [WordPressレッスンブック](wpLesson/index.md)
 + [7つの言語 7つの世界](7lang7week/index.md)
+
+***
+
+"readmemo" は読書メモのファイル構成のためのシェルスクリプトです

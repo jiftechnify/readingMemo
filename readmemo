@@ -1,0 +1,68 @@
+#!/bin/bash
+echo "読書メモのファイル構成を行います"
+read -p "本のタイトルを入力: " book
+read -p "本の略タイトルを入力(フォルダ名になります): " short
+read -p "章の系列をコンマ区切りで入力(例: 1,2-3,4-6): " chapters
+
+if [ -e $short ]; then
+  echo "そのタイトルの本のメモはすでに存在します。別の名前を指定してください"
+  exit 1
+fi
+
+cd /home/jiftech/Documents/readingMemo
+echo "+ [${book}](${short}/index.md)" >> readme.md
+mkdir "$short"
+cd "$short"
+echo "# ${book} メモ" > index.md
+echo "[戻る](../../../tree/master)" >> index.md
+echo "" >> index.md
+echo "## 目次" >> index.md
+
+chap_arr=(`echo $chapters | tr -s ',' ' '`)
+i=0
+for e in ${chap_arr[@]}
+do
+  file_name="c${e}"
+
+  if [ `echo $e | grep "-"` ]; then
+    c_start=`echo $e | cut -d "-" -f1`
+    c_end=`echo $e | cut -d "-" -f2`
+    c_name="${c_start}〜${c_end}"
+  else
+    c_start=$e
+    c_end=$e
+    c_name=$e
+  fi
+
+  echo "+ [${c_name}章 ](${file_name}.md)" >> index.md
+  echo "# ${book} 第${c_name}章" > ${file_name}.md
+  echo "[全体目次へ戻る](index.md)" >> ${file_name}.md
+  echo "## 目次" >> ${file_name}.md
+  echo "" >> ${file_name}.md
+
+  j=$c_start
+  while [ $j -le $c_end ]; do
+  echo "## ${j}章" >> ${file_name}.md
+  let j++
+  done
+
+  echo "" >> ${file_name}.md
+  echo "***" >> ${file_name}.md
+  echo "" >> ${file_name}.md
+
+  if [ $i -gt 0 ]; then
+    echo "[前へ](c${chap_arr[$(($i-1))]}.md) /" >> ${file_name}.md
+  fi
+
+  echo "[全体目次へ戻る](index.md) /" >> ${file_name}.md
+
+  if [ $i -lt $(( ${#chap_arr[@]}-1 )) ]; then
+    echo "[次へ](c${chap_arr[$(($i+1))]}.md)" >> ${file_name}.md
+  fi
+  let i++
+done
+
+echo "" >> index.md
+echo "## 情報" >> index.md
+echo "" >> index.md
+echo "## 備考" >> index.md
