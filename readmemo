@@ -1,4 +1,6 @@
 #!/bin/bash
+cd /home/jiftech/Documents/readingMemo
+
 echo "読書メモのファイル構成を行います"
 read -p "本のタイトルを入力: " book
 read -p "本の略タイトルを入力(フォルダ名になります): " short
@@ -9,7 +11,6 @@ if [ -e $short ]; then
   exit 1
 fi
 
-cd /home/jiftech/Documents/readingMemo
 echo "+ [${book}](${short}/index.md)" >> readme.md
 mkdir "$short"
 cd "$short"
@@ -37,7 +38,6 @@ do
   echo "+ [${c_name}章 ](${file_name}.md)" >> index.md
   echo "# ${book} 第${c_name}章" > ${file_name}.md
   echo "[全体目次へ戻る](index.md)" >> ${file_name}.md
-  echo "## 目次" >> ${file_name}.md
   echo "" >> ${file_name}.md
 
   j=$c_start

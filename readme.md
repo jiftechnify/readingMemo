@@ -10,3 +10,5 @@
 ***
 
 "readmemo" は読書メモのファイル構成のためのシェルスクリプトです
++ [7つの言語 7つの世界](7lang7week/index.md)
++ [7つの言語 7つの世界](7lang7week/index.md)
