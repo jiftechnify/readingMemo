@@ -105,4 +105,4 @@ class A extends App{
 ```
 
 ## まとめ
-Markdownは神:sushi:
+Markdownは神:innocent:
