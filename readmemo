@@ -1,10 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
+
+## sh エミュレーションモード
+emulate -R sh
+
 cd /home/jiftech/Documents/readingMemo
 
 echo "読書メモのファイル構成を行います"
-read -p "本のタイトルを入力: " book
-read -p "本の略タイトルを入力(フォルダ名になります): " short
-read -p "章の系列をコンマ区切りで入力(例: 1,2-3,4-6): " chapters
+read "book?本のタイトルを入力: "
+read "short?本の略タイトルを入力(フォルダ名になります): "
+read "chapters?章の系列をコンマ区切りで入力(例: 1,2-3,4-6): "
 
 if [ -e $short ]; then
   echo "そのタイトルの本のメモはすでに存在します。別の名前を指定してください"
