@@ -23,6 +23,5 @@
   + [15章 ｢分/時間カウンタ｣を設計･実装する](c15.md)
 
 ## 情報
-Dustin Boswell / Trevor Foucher 著
-
-角 征典 訳
+- Dustin Boswell / Trevor Foucher 著
+- 角 征典 訳
