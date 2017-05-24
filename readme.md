@@ -14,3 +14,4 @@
 + [初めてのSQL](LearningSQL/index.md)
 + [リーダブルコード](readableCode/index.md)
 + [Scalaスケーラブルプログラミング](programmingInScala/index.md)
++ [SOFT SKILLS ソフトウェア開発者の人生マニュアル](softskills/index.md)
