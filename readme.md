@@ -15,3 +15,5 @@
 + [リーダブルコード](readableCode/index.md)
 + [Scalaスケーラブルプログラミング](programmingInScala/index.md)
 + [SOFT SKILLS ソフトウェア開発者の人生マニュアル](softskills/index.md)
+
++ [Wish List](wishlist.md)
