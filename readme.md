@@ -15,12 +15,5 @@
 + [リーダブルコード](readableCode/index.md)
 + [Scalaスケーラブルプログラミング](programmingInScala/index.md)
 + [SOFT SKILLS ソフトウェア開発者の人生マニュアル](softskills/index.md)
-<<<<<<< HEAD
-+ [初めてのJavaScript第3版](learningES6/index.md)
-=======
-
-***
-
-+ [Wish List](wishlist.md)
 + [CSS3開発者ガイド](css3DevGuide/index.md)
->>>>>>> c1ce0fecd925745b8898543ef6c9a74a700df57d
++ [初めてのJavaScript第3版](learningES6/index.md)
