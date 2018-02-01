@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width">
+  <title>Example 3-2</title>
+  <link rel="stylesheet" href="css/blueprint/screen.css">
+  <link rel="stylesheet" href="css/persistent.css">
+  <style>
+li { font-size: 2.4em; }
+@media (min-width: 481px) {
+  li { font-size: 3.2em; }
+}
+li a {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    display: inline-block;
+    padding-left: 1.2em;
+}
+a[href^='mailto'] { background-image: url('images/icons/email.svg'); }
+a[href^='ftp'] { background-image: url('images/icons/folder.svg'); }
+a[href^='https'] { background-image: url('images/icons/lock.svg'); }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="span-4">&nbsp;</div>
+    <div class="span-16">
+    <ul>
+    	<li>これは<a href="mailto:email@example.com">メールアドレス</a>です。</li>
+    	<li>これは<a href="ftp://example.com">FTPサーバー</a>です。</li>
+    	<li>これは<a href="https://example.com">安全なリンク</a>です。</li>
+    </ul>
+    </div>
+    <div class="span-4 last">&nbsp;</div>
+</div>
+
+</body>
+</html>

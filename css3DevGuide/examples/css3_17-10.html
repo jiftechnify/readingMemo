@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width">
+  <title>Example 17-10</title>
+  <link rel="stylesheet" href="css/blueprint/screen.css">
+  <link rel="stylesheet" href="css/persistent.css">
+    <style>
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 80px);
+  }
+  .flow-column { grid-auto-flow: column; }
+  .flow-row { grid-auto-flow: row; }
+  .grid-item {
+    overflow: hidden;
+    z-index: 2;
+  }
+  .grid-item:nth-child(even) { background-color: #CCC !important; }
+  </style>
+</head>
+<body class="ch_17">
+<div class="container">
+  <div class="span-12">
+    <div class="grid-container flow-column">
+      <div class="grid-item">
+        <p>1つ目のグリッドアイテム</p>
+      </div>
+      <div class="grid-item">
+        <p>2つ目のグリッドアイテム</p>
+      </div>
+      <div class="grid-item">
+        <p>3つ目のグリッドアイテム</p>
+      </div>
+    </div>
+  </div>
+  <div class="span-12 last">
+    <div class="grid-container flow-row">
+      <div class="grid-item">
+        <p>1つ目のグリッドアイテム</p>
+      </div>
+      <div class="grid-item">
+        <p>2つ目のグリッドアイテム</p>
+      </div>
+      <div class="grid-item">
+        <p>3つ目のグリッドアイテム</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

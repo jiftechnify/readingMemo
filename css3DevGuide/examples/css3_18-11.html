@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width">
+  <title>Example 18-11</title>
+  <link rel="stylesheet" href="css/blueprint/screen.css">
+  <link rel="stylesheet" href="css/persistent.css">
+    <style>
+  .clip-holder { border: 1px solid black; }
+  .clip-holder img { display: block; }
+  .clip-poly {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 0%); /* Safari */
+  }
+  </style>
+</head>
+<body class="ch_18">
+<div class="container">
+  <div class="span-8">&thinsp;</div>
+  <div class="span-8 clip-holder">
+    <img src="images/eyes.jpg" class="clip-poly">
+  </div>
+  <div class="span-8 last">&thinsp;</div>
+</div>
+
+</body>
+</html>

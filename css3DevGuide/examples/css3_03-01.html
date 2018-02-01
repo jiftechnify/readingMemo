@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width">
+  <title>Example 3-1</title>
+  <link rel="stylesheet" href="css/blueprint/screen.css">
+  <link rel="stylesheet" href="css/persistent.css">
+  <style>
+p {
+    font-size: 2.4em;
+    text-align: center;
+}
+@media (min-width: 481px) {
+  p { font-size: 3.2em; }
+}
+a[href^='http'] {
+    background: url('images/icons/external.svg') no-repeat left center;
+    background-size: 1em;
+    display: inline-block;
+    padding-left: 1.2em;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="span-24 last">
+      <p>これは<a href="http://example.com/">ハイパーリンク</a>です。</p>
+    </div>
+</div>
+
+</body>
+</html>

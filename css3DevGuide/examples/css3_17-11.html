@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width">
+  <title>Example 17-11</title>
+  <link rel="stylesheet" href="css/blueprint/screen.css">
+  <link rel="stylesheet" href="css/persistent.css">
+    <style>
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 80px);
+  }
+  .grid-item {
+    overflow: hidden;
+  }
+  .item-one {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    outline: 1px solid black;
+  }
+  .item-two {
+    background-color: #CCC !important;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+  .z-index .item-one { z-index: 2; }
+  </style>
+</head>
+<body class="ch_17">
+<div class="container">
+  <div class="span-12">
+    <div class="grid-container">
+      <div class="grid-item item-one">
+        <p>item-one item-one item-one item-one item-one</p>
+      </div>
+      <div class="grid-item item-two">
+        <p>item-two item-two item-two item-two item-two</p>
+      </div>
+    </div>
+  </div>
+  <div class="span-12 last">
+    <div class="grid-container z-index">
+      <div class="grid-item item-one">
+        <p>item-one item-one item-one item-one item-one</p>
+      </div>
+      <div class="grid-item item-two">
+        <p>item-two item-two item-two item-two item-two</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
