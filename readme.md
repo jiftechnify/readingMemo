@@ -4,6 +4,8 @@
 
 ***
 
++ [Wish List](wishlist.md)
+
 + [Markdown記法のメモ](Markdown/index.md)
 + [HTML5+CSS3の新しい教科書](HTML5CSS3NewTextBook/index.md)
 + [入門HTML5](HTML5/index.md)
@@ -13,7 +15,4 @@
 + [リーダブルコード](readableCode/index.md)
 + [Scalaスケーラブルプログラミング](programmingInScala/index.md)
 + [SOFT SKILLS ソフトウェア開発者の人生マニュアル](softskills/index.md)
-
-***
-
-+ [Wish List](wishlist.md)
++ [初めてのJavaScript第3版](learningES6/index.md)
