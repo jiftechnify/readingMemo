@@ -55,10 +55,10 @@ try {
 
   let chapSplit = chapters.split(',');
   chapSplit.forEach((chap, idx) => {
-    let mdchap = path.join(projectDir, `${chap}.md`);
+    let mdchap = path.join(projectDir, `c${chap}.md`);
     let title = chap.replace('-', '～');
 
-    printAll(index, `+ [${title}章](${chap}.md)`);
+    printAll(index, `+ [${title}章](c${chap}.md)`);
     printAll(mdchap, [
       `# ${book} 第${title}章`,
       `[全体目次へ戻る](index.md)`,
