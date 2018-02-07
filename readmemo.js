@@ -34,16 +34,18 @@ const printAll = (path, contents) => {
   }
 }
 
+process.chdir(__dirname);
+
 console.log('新規読書メモプロジェクトを構成します');
 let projectDir = loop();
 let book = rs.question('本のタイトルを入力:');
 let chapters = rs.question('章の系列をコンマ区切りで入力(例: 1,2-3,4-6):');
 
-const index = path.join(__dirname, projectDir, 'index.md');
+const index = path.join(projectDir, 'index.md');
 
 try {
-  fs.mkdir(path.join(__dirname, projectDir));
-  printAll(path.join(__dirname, '/readme.md'), `+ [${book}](${projectDir}/index.md)`);
+  fs.mkdir(projectDir);
+  printAll('readme.md', `+ [${book}](${projectDir}/index.md)`);
   printAll(index, [
     `# ${book} メモ`,
     `[戻る](../../../tree/master)`,
@@ -53,7 +55,7 @@ try {
 
   let chapSplit = chapters.split(',');
   chapSplit.forEach((chap, idx) => {
-    let mdchap = path.join(__dirname, projectDir, `${chap}.md`);
+    let mdchap = path.join(projectDir, `${chap}.md`);
     let title = chap.replace('-', '～');
 
     printAll(index, `+ [${title}章](${chap}.md)`);
