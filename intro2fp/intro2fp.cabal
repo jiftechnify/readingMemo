@@ -1,0 +1,62 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 118922e565c53106e5bca119dba52426201a733284a45485374a97b7012b1771
+
+name:           intro2fp
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/jiftechnify/intro2fp#readme>
+homepage:       https://github.com/jiftechnify/intro2fp#readme
+bug-reports:    https://github.com/jiftechnify/intro2fp/issues
+author:         jiftechnify
+maintainer:     jiftech.stlfy@gmail.com
+copyright:      Copyright (c) 2018 jiftechnify
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jiftechnify/intro2fp
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_intro2fp
+  default-language: Haskell2010
+
+executable intro2fp-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , intro2fp
+  other-modules:
+      Paths_intro2fp
+  default-language: Haskell2010
+
+test-suite intro2fp-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , intro2fp
+  other-modules:
+      Paths_intro2fp
+  default-language: Haskell2010

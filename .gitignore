@@ -5,3 +5,4 @@ programmingInScala/scells/.ensime
 programmingInScala/scells/.ensime_cache
 
 *.out
+.stack-work
