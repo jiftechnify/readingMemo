@@ -18,3 +18,4 @@
 + [CSS3開発者ガイド](css3DevGuide/index.md)
 + [初めてのJavaScript第3版](learningES6/index.md)
 + [Unix独習への近道](TYunix/index.md)
++ [����������� Haskell��������](intro2fp/index.md)
