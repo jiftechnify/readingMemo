@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 118922e565c53106e5bca119dba52426201a733284a45485374a97b7012b1771
+-- hash: 70a7c14c59f21560329218f2967917bfb68d719fb2d85dfda9a9658bd6f97cf2
 
 name:           intro2fp
 version:        0.1.0.0
@@ -13,13 +13,8 @@ author:         jiftechnify
 maintainer:     jiftech.stlfy@gmail.com
 copyright:      Copyright (c) 2018 jiftechnify
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 cabal-version:  >= 1.10
-
-extra-source-files:
-    ChangeLog.md
-    README.md
 
 source-repository head
   type: git
@@ -31,6 +26,7 @@ library
   build-depends:
       base >=4.7 && <5
   exposed-modules:
+      C1
       Lib
   other-modules:
       Paths_intro2fp
