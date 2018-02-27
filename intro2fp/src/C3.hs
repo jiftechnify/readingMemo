@@ -14,8 +14,8 @@ succ :: Cnum a -> Cnum a
 succ cn f = f . cn f
 
 -- CnumとIntの間の相互変換
-church :: Int -> Cnum Int
-church = foldn succ zero
+-- church :: Int -> Cnum Int
+-- church = foldn succ zero
 
 natural :: Cnum Int -> Int
 natural cn = cn (+1) 0

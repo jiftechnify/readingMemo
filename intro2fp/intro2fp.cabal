@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 70a7c14c59f21560329218f2967917bfb68d719fb2d85dfda9a9658bd6f97cf2
+-- hash: b5a7b457aaffc4153cbcbc073dc00f4bba387b5fd3570edc78721a885fd2faf9
 
 name:           intro2fp
 version:        0.1.0.0
@@ -27,7 +27,11 @@ library
       base >=4.7 && <5
   exposed-modules:
       C1
+      C3
+      Calendar
+      Int2Words
       Lib
+      TextProcessing
   other-modules:
       Paths_intro2fp
   default-language: Haskell2010
