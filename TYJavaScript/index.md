@@ -1,4 +1,4 @@
-# 独習JavaSctipt 第2版 メモ
+# 独習JavaScript 第2版 メモ
 [戻る](../../../tree/master)
 
 ## 目次
