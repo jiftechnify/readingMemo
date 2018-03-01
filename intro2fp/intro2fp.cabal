@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b5a7b457aaffc4153cbcbc073dc00f4bba387b5fd3570edc78721a885fd2faf9
+-- hash: 2dd5ab9bb6fdf9e23882b005ef8aad5e949805468c0ac17c9c8dce8e263495e8
 
 name:           intro2fp
 version:        0.1.0.0
@@ -26,6 +26,7 @@ library
   build-depends:
       base >=4.7 && <5
   exposed-modules:
+      Atree
       C1
       C3
       Calendar
