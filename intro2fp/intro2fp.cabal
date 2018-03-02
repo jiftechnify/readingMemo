@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2dd5ab9bb6fdf9e23882b005ef8aad5e949805468c0ac17c9c8dce8e263495e8
+-- hash: e5b645c22cbf65b29cfe519bdac18c2c7db5681f8b4be75c3399a7f7467e6d96
 
 name:           intro2fp
 version:        0.1.0.0
@@ -25,6 +25,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , random
   exposed-modules:
       Atree
       C1
@@ -32,6 +33,7 @@ library
       Calendar
       Int2Words
       Lib
+      RPS
       TextProcessing
   other-modules:
       Paths_intro2fp
@@ -45,6 +47,7 @@ executable intro2fp-exe
   build-depends:
       base >=4.7 && <5
     , intro2fp
+    , random
   other-modules:
       Paths_intro2fp
   default-language: Haskell2010
@@ -58,6 +61,7 @@ test-suite intro2fp-test
   build-depends:
       base >=4.7 && <5
     , intro2fp
+    , random
   other-modules:
       Paths_intro2fp
   default-language: Haskell2010
